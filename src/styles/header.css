@@ -1,0 +1,12 @@
+.navbar-nav li a {
+  font-size: 1.1rem !important;
+  letter-spacing: 0.1rem;
+}
+
+.navbar-nav li:nth-child(odd) a {
+  color: var(--dark-grey) !important;
+}
+
+.navbar-nav li:nth-child(even) a {
+  color: var(--grey) !important;
+}
