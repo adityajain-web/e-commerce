@@ -24,7 +24,7 @@
   --para-font-family: product-sans-regular;
   --dark-grey: #3c4043;
   --grey: #777;
-  --light-grey: red;
+  --light-grey: #fafafa;
   --h1-font-size: 2rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1.17rem;
@@ -98,15 +98,15 @@ a {
 }
 
 .bg--dark-grey {
-  color: var(--dark-grey) !important;
+  background-color: var(--dark-grey) !important;
 }
 
 .bg--grey {
-  color: var(--grey) !important;
+  background-color: var(--grey) !important;
 }
 
 .bg--light-grey {
-  color: var(--light-grey) !important;
+  background-color: var(--light-grey) !important;
 }
 
 .font--weight-bold {

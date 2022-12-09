@@ -6,3 +6,24 @@ export const setProduct = (products) => {
         payload: products
     }
 }
+
+export const setAllMenProducts = (products) => {
+    return {
+        type: actionTypes.FILTER_FOR_MEN,
+        payload: products
+    }
+}
+
+export const setAllWomenProducts = (products) => {
+    return {
+        type: actionTypes.FILTER_FOR_WOMEN,
+        payload: products
+    }
+}
+
+export const setAllKidsProducts = (products) => {
+    return {
+        type: actionTypes.FILTER_FOR_KIDS,
+        payload: products
+    }
+}
