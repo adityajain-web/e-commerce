@@ -1,29 +1,32 @@
+import commerce from '../../lib/commerce';
 import actionTypes from '../constant/actionTypes';
 
-export const setProduct = (products) => {
-    return {
-        type: actionTypes.SET_PRODUCTS,
-        payload: products
-    }
+export const setProduct = () => async (dispatch, getState) => {
+    const { data } = await commerce.products.list({ limit: 200 });
+    dispatch({ type: actionTypes.SET_PRODUCTS, payload: data })
 }
 
-export const setAllMenProducts = (products) => {
-    return {
-        type: actionTypes.FILTER_FOR_MEN,
-        payload: products
-    }
+export const setAllMenProducts = () => async (dispatch, getState) => {
+    const { data } = await commerce.products.list({ category_slug: ['mens'] });
+    dispatch({ type: actionTypes.FILTER_FOR_MEN, payload: data })
 }
 
-export const setAllWomenProducts = (products) => {
-    return {
-        type: actionTypes.FILTER_FOR_WOMEN,
-        payload: products
-    }
+
+export const setAllWomenProducts = () => async (dispatch, getState) => {
+    const { data } = await commerce.products.list({ category_slug: ['womens'] });
+    dispatch({ type: actionTypes.FILTER_FOR_WOMEN, payload: data })
 }
 
-export const setAllKidsProducts = (products) => {
-    return {
-        type: actionTypes.FILTER_FOR_KIDS,
-        payload: products
-    }
+export const setAllKidsProducts = () => async (dispatch, getState) => {
+    const { data } = await commerce.products.list({ category_slug: ['kids'] });
+    dispatch({ type: actionTypes.FILTER_FOR_KIDS, payload: data })
+}
+
+export const setSelectedCategory = (slug) => async (dispatch, getdata) => {
+    const { data } = await commerce.products.list({ category_slug: [slug], limit: 200 });
+    dispatch({ type: actionTypes.SET_SELECTED_CATEGORY, payload: data })
+}
+
+export const removeSelectedCategory = () => (dispatch) => {
+    dispatch({ type: actionTypes.REMOVE_SELECTED_CATEGORY })
 }

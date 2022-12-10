@@ -1,5 +1,7 @@
-import React from 'react'
-import { Box, Container, Grid, Typography, Button } from '@mui/material'
+import React, { useEffect } from 'react'
+import { setAllMenProducts, setAllWomenProducts, setAllKidsProducts } from '../redux/action/productAction';
+import { useSelector, useDispatch } from 'react-redux';
+import { Box, Container, Typography, } from '@mui/material'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,13 +19,26 @@ import promo2 from '../assets/Home/Banner/promo2.webp'
 import promo2Mob from '../assets/Home/Banner/promo2-mob.jpg'
 import promo3Mob from '../assets/Home/Banner/promo3-mob.webp'
 import { CategoryTitle, ProductCard } from '../components/components'
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ArrowForward } from '@mui/icons-material';
+import commerce from '../lib/commerce';
 
 
 const Home = () => {
+    const dispatch = useDispatch()
     const { allMenProducts, allWomenProducts, allKidsProducts } = useSelector((state) => state.setProductReducer);
-    console.log(allMenProducts, allWomenProducts, allKidsProducts)
+
+    useEffect(() => {
+        dispatch(setAllMenProducts())
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(setAllWomenProducts())
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(setAllKidsProducts())
+    }, [dispatch])
 
     return (
         <>
@@ -62,7 +77,10 @@ const Home = () => {
                 <section className='mt-md-5 mt-4'>
                     <Container maxWidth="xxl">
                         <Box py={2}>
-                            <CategoryTitle variant="h2" align="left" title="TRENDS FOR HIM" />
+                            <Box className='d-flex justify-content-between align-items-center'>
+                                <CategoryTitle variant="h2" align="left" title="TRENDS FOR HIM" />
+                                <Typography><Link to="/product/category/mens-clothings/" className='text--grey font--weight-bold'>VIEW MORE <ArrowForward /></Link></Typography>
+                            </Box>
                             <Box my={3}>
                                 <Swiper
                                     slidesPerView={1}
@@ -108,7 +126,10 @@ const Home = () => {
                 <section className='mt-md-5 mt-4'>
                     <Container maxWidth="xxl">
                         <Box py={2}>
-                            <CategoryTitle variant="h2" align="left" title="TRENDS FOR HER" />
+                            <Box className='d-flex justify-content-between align-items-center'>
+                                <CategoryTitle variant="h2" align="left" title="TRENDS FOR HER" />
+                                <Typography><Link to="/product/category/women-clothing/" className='text--grey font--weight-bold'>VIEW MORE <ArrowForward /></Link></Typography>
+                            </Box>
                             <Box my={3}>
                                 <Swiper
                                     slidesPerView={1}
@@ -155,7 +176,10 @@ const Home = () => {
                 <section className='mt-md-5 mt-4'>
                     <Container maxWidth="xxl">
                         <Box py={2}>
-                            <CategoryTitle variant="h2" align="left" title="TRENDS FOR KIDS" />
+                            <Box className='d-flex justify-content-between align-items-center'>
+                                <CategoryTitle variant="h2" align="left" title="TRENDS FOR KIDS" />
+                                <Typography><Link to="/product/category/kids/" className='text--grey font--weight-bold'>VIEW MORE <ArrowForward /></Link></Typography>
+                            </Box>
                             <Box my={3}>
                                 <Swiper
                                     slidesPerView={1}
