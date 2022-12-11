@@ -5,7 +5,8 @@ const initialState = {
     allMenProducts: [],
     allWomenProducts: [],
     allKidsProducts: [],
-    productsByCategory: []
+    productsByCategory: [],
+    product: {}
 }
 
 export const setProductReducer = (state = initialState, { type, payload }) => {
@@ -27,6 +28,12 @@ export const setProductReducer = (state = initialState, { type, payload }) => {
 
         case actionTypes.REMOVE_SELECTED_CATEGORY:
             return { ...state, productsByCategory: [] };
+
+        case actionTypes.SET_SELECTED_PRODUCT:
+            return { ...state, product: payload }
+
+        case actionTypes.REMOVE_SELECTED_PRODUCT:
+            return { ...state, product: {} }
 
         default:
             return state;

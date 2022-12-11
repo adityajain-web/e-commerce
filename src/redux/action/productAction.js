@@ -30,3 +30,12 @@ export const setSelectedCategory = (slug) => async (dispatch, getdata) => {
 export const removeSelectedCategory = () => (dispatch) => {
     dispatch({ type: actionTypes.REMOVE_SELECTED_CATEGORY })
 }
+
+export const setSelectedProduct = (permalink) => async (dispatch, getState) => {
+    const data = await commerce.products.retrieve(permalink, { type: 'permalink' });
+    dispatch({ type: actionTypes.SET_SELECTED_PRODUCT, payload: data })
+}
+
+export const removeSelectedProduct = () => (dispatch, getState) => {
+    dispatch({ type: actionTypes.REMOVE_SELECTED_PRODUCT })
+}

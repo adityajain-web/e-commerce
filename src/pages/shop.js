@@ -52,10 +52,10 @@ const Shop = () => {
                                     <Box>
                                         <Box className='d-flex justify-content-between align-items-center' p={3} component={Paper}>
                                             <Typography variant='h2'>Search Results | <span className='text--grey'>{products ? products.length : '...'} Products</span></Typography>
-                                            <Box>
+                                            {/* <Box>
                                                 <IconButton className='mx-1'><Apps /></IconButton>
                                                 <IconButton className='mx-1'><List /></IconButton>
-                                            </Box>
+                                            </Box> */}
                                         </Box>
                                         <Box mt={3}>
                                             {

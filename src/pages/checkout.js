@@ -2,7 +2,11 @@ import React from 'react'
 
 const Checkout = () => {
     return (
-        <>Checkout</>
+        <>
+            <main>
+                <h1 className='text-center'>UNDER CONSTRUCTION...</h1>
+            </main>
+        </>
     )
 }
 

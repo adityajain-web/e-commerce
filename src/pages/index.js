@@ -48,9 +48,11 @@ const Home = () => {
                     <Container maxWidth="xxl" className='p-0'>
                         <Swiper
                             spaceBetween={30}
+                            loop={true}
+                            loopFillGroupWithBlank={true}
                             centeredSlides={true}
                             autoplay={{
-                                delay: 2500,
+                                delay: 10000 * 6,
                                 disableOnInteraction: false,
                             }}
                             pagination={{
@@ -77,7 +79,7 @@ const Home = () => {
                 <section className='mt-md-5 mt-4'>
                     <Container maxWidth="xxl">
                         <Box py={2}>
-                            <Box className='d-flex justify-content-between align-items-center'>
+                            <Box className='d-flex flex-column flex-md-row justify-content-between align-items-center'>
                                 <CategoryTitle variant="h2" align="left" title="TRENDS FOR HIM" />
                                 <Typography><Link to="/product/category/mens-clothings/" className='text--grey font--weight-bold'>VIEW MORE <ArrowForward /></Link></Typography>
                             </Box>
@@ -85,6 +87,8 @@ const Home = () => {
                                 <Swiper
                                     slidesPerView={1}
                                     spaceBetween={10}
+                                    loop={true}
+                                    loopFillGroupWithBlank={true}
                                     autoplay={{
                                         delay: 2500,
                                         disableOnInteraction: false,
@@ -126,7 +130,7 @@ const Home = () => {
                 <section className='mt-md-5 mt-4'>
                     <Container maxWidth="xxl">
                         <Box py={2}>
-                            <Box className='d-flex justify-content-between align-items-center'>
+                            <Box className='d-flex flex-column flex-md-row justify-content-between align-items-center'>
                                 <CategoryTitle variant="h2" align="left" title="TRENDS FOR HER" />
                                 <Typography><Link to="/product/category/women-clothing/" className='text--grey font--weight-bold'>VIEW MORE <ArrowForward /></Link></Typography>
                             </Box>
@@ -134,6 +138,8 @@ const Home = () => {
                                 <Swiper
                                     slidesPerView={1}
                                     spaceBetween={10}
+                                    loop={true}
+                                    loopFillGroupWithBlank={true}
                                     autoplay={{
                                         delay: 2500,
                                         disableOnInteraction: false,
@@ -176,7 +182,7 @@ const Home = () => {
                 <section className='mt-md-5 mt-4'>
                     <Container maxWidth="xxl">
                         <Box py={2}>
-                            <Box className='d-flex justify-content-between align-items-center'>
+                            <Box className='d-flex flex-column flex-md-row justify-content-between align-items-center'>
                                 <CategoryTitle variant="h2" align="left" title="TRENDS FOR KIDS" />
                                 <Typography><Link to="/product/category/kids/" className='text--grey font--weight-bold'>VIEW MORE <ArrowForward /></Link></Typography>
                             </Box>
@@ -184,6 +190,8 @@ const Home = () => {
                                 <Swiper
                                     slidesPerView={1}
                                     spaceBetween={10}
+                                    loop={true}
+                                    loopFillGroupWithBlank={true}
                                     autoplay={{
                                         delay: 2500,
                                         disableOnInteraction: false,
